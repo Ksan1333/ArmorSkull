@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="First Commit">
-      <change afterPath="D:/ArmorSkull/.gitignore" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/Lang.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/Util.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/ReloadCommand.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/AnvilItem.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Create.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/DisplayLore.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Durability.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Enchant.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Remove.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Repair.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Setting.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Anvil.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Damage.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Enchant.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Mend.java" afterDir="false" />
-      <change afterPath="D:/ArmorSkull/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/.idea/jarRepositories.xml" beforeDir="false" afterPath="D:/ArmorSkull/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/.idea/workspace.xml" beforeDir="false" afterPath="D:/ArmorSkull/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/pom.xml" beforeDir="false" afterPath="D:/ArmorSkull/pom.xml" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/ArmorSkull.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/ArmorSkull.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/resources/plugin.yml" beforeDir="false" afterPath="D:/ArmorSkull/src/main/resources/plugin.yml" afterDir="false" />
-    </list>
+    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="SNAPSHOT commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,11 +99,20 @@
       <option name="project" value="LOCAL" />
       <updated>1692150219614</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="SNAPSHOT commit">
+      <option name="closed" value="true" />
+      <created>1692150893241</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692150893241</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="SNAPSHOT commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="SNAPSHOT commit" />
   </component>
 </project>
