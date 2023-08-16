@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="" />
+    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="First Commit">
+      <change afterPath="D:/ArmorSkull/.gitignore" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/Lang.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/Util.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/ReloadCommand.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/AnvilItem.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Create.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/DisplayLore.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Durability.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Enchant.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Remove.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Repair.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Setting.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Anvil.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Damage.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Enchant.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Mend.java" afterDir="false" />
+      <change afterPath="D:/ArmorSkull/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/.idea/jarRepositories.xml" beforeDir="false" afterPath="D:/ArmorSkull/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/.idea/workspace.xml" beforeDir="false" afterPath="D:/ArmorSkull/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/pom.xml" beforeDir="false" afterPath="D:/ArmorSkull/pom.xml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/ArmorSkull.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/ArmorSkull.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/resources/plugin.yml" beforeDir="false" afterPath="D:/ArmorSkull/src/main/resources/plugin.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="D:/ArmorSkull" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2
 }]]></component>
   <component name="ProjectId" id="2U2u2f9gpelJPpBEF8eMu7utT8r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -18,10 +53,29 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/ArmorSkull/test/paper-1.20.1-84.jar"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ArmorSkull\src\main\resources" />
+      <recent name="D:\ArmorSkull\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ArmorSkull\test\plugins" />
+      <recent name="D:\ArmorSkull" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JAR アプリケーション.RunServer">
+    <configuration name="RunServer" type="JarApplication">
+      <option name="JAR_PATH" value="D:/ArmorSkull/test/paper-1.20.1-84.jar" />
+      <option name="PROGRAM_PARAMETERS" value="nogui" />
+      <option name="WORKING_DIRECTORY" value="D:\ArmorSkull\test" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
     <configuration name="ArmorSkull package" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -51,6 +105,10 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JAR アプリケーション.RunServer" />
+      <item itemvalue="Maven.ArmorSkull package" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,6 +119,19 @@
       <option name="presentableId" value="Default" />
       <updated>1692149792198</updated>
     </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1692150219614</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692150219614</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
 </project>

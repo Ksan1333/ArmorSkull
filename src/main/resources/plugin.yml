@@ -1,4 +1,65 @@
 name: ArmorSkull
-version: '${project.version}'
+version: '0.0.1'
 main: com.keisa1333.armorskull.ArmorSkull
 api-version: '1.20'
+author: keisa1333
+
+commands:
+  armorskull:
+    description: change skull to armor skull
+    aliases: [ as ]
+  armorskullreload:
+    description: reload the plugin
+    aliases: [ asr]
+
+permissions:
+  armorskull.admin:
+    default: op
+    description: Gives full access to the plugin
+    children:
+      armorskull.armorskull.*: true
+      armorskull.manageskull: true
+      armorskull.armorskullreload: true
+  armorskull.armorskullreload:
+    default: op
+    description: Gives full access to command /armorskullreload
+  armorskull.armorskull.*:
+    default: op
+    description: Gives full access to command /armorskull
+    children:
+      armorskull.armorskull.create: true
+      armorskull.armorskull.enchant: true
+      armorskull.armorskull.give: true
+      armorskull.armorskull.help: true
+      armorskull.armorskull.remove: true
+      armorskull.armorskull.rename: true
+      armorskull.armorskull.repair: true
+      armorskull.armorskull.see: true
+      armorskull.armorskull.set: true
+  armorskull.armorskull.create:
+    default: op
+    description: Allow to
+  armorskull.armorskull.enchant:
+    default: op
+    description: Allow to
+  armorskull.armorskull.give:
+    default: op
+    description: Allow to
+  armorskull.armorskull.help:
+    default: op
+    description: Allow to
+  armorskull.armorskull.remove:
+    default: op
+    description: Allow to
+  armorskull.armorskull.rename:
+    default: op
+    description: Allow to
+  armorskull.armorskull.repair:
+    default: op
+    description: Allow to
+  armorskull.armorskull.info:
+    default: op
+    description: Allow to
+  armorskull.armorskull.set:
+    default: op
+    description: Allow to
