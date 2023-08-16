@@ -1,0 +1,4 @@
+name: ArmorSkull
+version: '${project.version}'
+main: com.keisa1333.armorskull.ArmorSkull
+api-version: '1.20'
