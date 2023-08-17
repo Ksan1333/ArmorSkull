@@ -41,17 +41,22 @@ public class Rename implements CommandExecutor {
             newName = newName.replace("&", "§");
         }
 
+        StringBuilder sb;
+
         if (newName.contains("#")) {
-            StringBuilder sb = new StringBuilder();
+            sb = new StringBuilder();
             String[] names = newName.split("#");
             for (int i = 0; i < names.length; i++) {
-                player.sendMessage(names[i]);
+//                player.sendMessage(names[i]);
                 if (names[i].matches("^[0-9A-Fa-f]{6}.*$")) {
                     String hexColor = names[i]; // 6文字の16進数カラーコード
 
                     String redHex = hexColor.substring(0, 2);     // 最初の2文字 (FF)
-                    String greenHex = hexColor.substring(3, 4);   // 次の2文字 (AA)
+                    player.sendMessage(redHex);
+                    String greenHex = hexColor.substring(2, 4);   // 次の2文字 (AA)
+                    player.sendMessage(greenHex);
                     String blueHex = hexColor.substring(4, 6);    // 最後の2文字 (BB)
+                    player.sendMessage(blueHex);
 
                     int red = Integer.parseInt(redHex, 16);       // 16進数文字列を10進数数値に変換
                     int green = Integer.parseInt(greenHex, 16);
@@ -60,8 +65,14 @@ public class Rename implements CommandExecutor {
                     // RGBカラーコードを作成
                     ChatColor color = ChatColor.of(new java.awt.Color(red, green, blue));   // 次の2文字 (AA)
                     String text = hexColor.substring(6);
-                    player.sendMessage(text);
+//                    player.sendMessage(text);
                     sb.append(color).append(text);
+                } else {
+                    if (i == 0) {
+                        sb.append(names[i]);
+                    } else {
+                        sb.append("#").append(names[i]);
+                    }
                 }
             }
             newName = sb.toString();
