@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="SNAPSHOT commit" />
+    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="0.1.3 Update!">
+      <change beforePath="D:/ArmorSkull/.idea/workspace.xml" beforeDir="false" afterPath="D:/ArmorSkull/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/pom.xml" beforeDir="false" afterPath="D:/ArmorSkull/pom.xml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/resources/plugin.yml" beforeDir="false" afterPath="D:/ArmorSkull/src/main/resources/plugin.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +18,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="D:/ArmorSkull" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2U2u2f9gpelJPpBEF8eMu7utT8r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -27,16 +32,21 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/ArmorSkull/test/paper-1.20.1-84.jar"
+    "last_opened_file_path": "D:/ArmorSkull/test/plugins",
+    "project.structure.last.edited": "プロジェクト",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ArmorSkull\test\plugins" />
       <recent name="D:\ArmorSkull\src\main\resources" />
       <recent name="D:\ArmorSkull\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ArmorSkull\test\plugins" />
+      <recent name="D:\ArmorSkull\target" />
       <recent name="D:\ArmorSkull" />
     </key>
   </component>
@@ -107,12 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1692150893241</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="0.1.3 Update!">
+      <option name="closed" value="true" />
+      <created>1692152557130</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692152557130</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="SNAPSHOT commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="SNAPSHOT commit" />
+    <MESSAGE value="0.1.3 Update!" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.1.3 Update!" />
   </component>
 </project>
