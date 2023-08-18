@@ -194,24 +194,47 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
-
         Player player = (Player) sender;
-        ItemStack item = player.getInventory().getItemInMainHand();
-        NBTItem nbti = new NBTItem(item);
-        boolean isSetting = Util.getIsSetting(nbti);
 
         if (args[0].equalsIgnoreCase("damage") || args[0].equalsIgnoreCase("durability") || args[0].equalsIgnoreCase("info") || args[0].equalsIgnoreCase("remove") || args[0].equalsIgnoreCase("repair") || args[0].equalsIgnoreCase("setting")) {
+            ItemStack item = player.getInventory().getItemInMainHand();
+            NBTItem nbti;
+            try {
+                nbti = new NBTItem(item);
+            } catch (Exception e) {
+                player.sendMessage("§cプレイヤーヘッドを手に持ってください！");
+                return false;
+            }
+            boolean isSetting = Util.getIsSetting(nbti);
+
             if (!Util.checkPlayerHead(sender, item)) return false;
             if (!Util.checkIsSetting(sender, isSetting, true)) return false;
         }
 
-        if (args[0].equalsIgnoreCase("enchant") || args[0].equalsIgnoreCase("modify") || args[0].equalsIgnoreCase("rename")) {
-            if (!Util.checkItem(sender, item)) return false;
+        if (args[0].equalsIgnoreCase("enchant") || args[0].equalsIgnoreCase("modify") || args[0].equalsIgnoreCase("rename") || args[0].equalsIgnoreCase("hideflags")) {
+            ItemStack item = player.getInventory().getItemInMainHand();
+            NBTItem nbti;
+            try {
+                nbti = new NBTItem(item);
+            } catch (Exception e) {
+                player.sendMessage("§cアイテムを手に持ってください！");
+                return false;
+            }
         }
 
         if (args[0].equalsIgnoreCase("create")) {
-            if (Util.checkPlayerHead(sender, item)) { return false; }
-            if (!Util.checkIsSetting(sender, isSetting, true)) { return false; }
+            ItemStack item = player.getInventory().getItemInMainHand();
+            NBTItem nbti;
+            try {
+                nbti = new NBTItem(item);
+            } catch (Exception e) {
+                player.sendMessage("§cプレイヤーヘッドを手に持ってください！");
+                return false;
+            }
+            boolean isSetting = Util.getIsSetting(nbti);
+
+            if (!Util.checkPlayerHead(sender, item)) return false;
+            if (!Util.checkIsSetting(sender, isSetting, false)) return false;
         }
 
         if (args.length > 0) {
@@ -232,7 +255,7 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
                     return true;
 
                 case "damage":
-                    if (!args[1].equalsIgnoreCase("clear") && !args[1].equalsIgnoreCase("default") && !Util.checkArguments(sender, args, 3)) {
+                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !args[1].equalsIgnoreCase("default") && !Util.checkArguments(sender, args, 3))) {
                         sender.sendMessage("§c引数が足りません！/as damage (clear|default|add <damagecause>)");
                         return false;
                     }
@@ -259,7 +282,7 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
                     return true;
 
                 case "enchant":
-                    if (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 3)) {
+                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 3))) {
                         sender.sendMessage("§c引数が足りません！/as enchant (clear|<enchant type> [<level>])");
                         return false;
                     }
@@ -272,15 +295,24 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
                     help.onCommand(sender, cmd, a, args);
                     return true;
 
+                case "hideflags":
+                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 2))) {
+                        sender.sendMessage("§c引数が足りません！/as hideflags (clear|0|255|<number>)");
+                        return false;
+                    }
+                    Hideflags hidef = new Hideflags();
+                    hidef.onCommand(sender, cmd, a, args);
+                    return true;
+
                 case "info":
                     Info info = new Info();
                     info.onCommand(sender, cmd, a, args);
                     return true;
 
                 case "modify":
-                    if (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args,4)) {
+                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args,5))) {
                         //<0,1,2> ADD_SCALAR（スカラー値を加算）、MULTIPLY_SCALAR_1（スカラー値を乗算）、MULTIPLY_SCALAR_2（スカラー値を2倍乗算）
-                        player.sendMessage("§c引数が足りません！/as modify (clear|<attribute> <number> <0,1,2>)");
+                        player.sendMessage("§c引数が足りません！/as modify (clear|<attribute> <number> <0,1,2> <slot>)");
                         return false;
                     }
                     Modify modify = new Modify();
@@ -293,7 +325,7 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
                     return true;
 
                 case "rename":
-                    if (!Util.checkArguments(sender, args, 2)) {
+                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 2))) {
                         sender.sendMessage("§c引数が足りません！/as rename (clear|<name>)");
                         return false;
                     }

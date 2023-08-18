@@ -15,6 +15,7 @@ public class Util {
     // プレイヤーがコマンドの引数を満たしているかをチェックするメソッド
     public static boolean checkArguments(CommandSender sender, String[] args, int requiredArgs) {
         if (args.length < requiredArgs) {
+            //args.length >= requireArgs
             return false;
         }
         return true;

@@ -1,16 +1,29 @@
 package com.keisa1333.armorskull.command.armorskull;
 
+import de.tr7zw.changeme.nbtapi.NBT;
+import de.tr7zw.changeme.nbtapi.iface.ReadWriteNBT;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class Help implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
+        Player player = (Player) sender;
+        ItemStack item = player.getInventory().getItemInMainHand();
+
+        if (args.length == 1 || args[1].equalsIgnoreCase("nbt")) {
+            ReadWriteNBT nbt = NBT.itemStackToNBT(item);
+            String str = nbt.toString();
+            player.sendMessage(str);
+        }
+
         if (args.length == 1 || args[1].equalsIgnoreCase("1")) {
             helpList1(sender);
             return true;
