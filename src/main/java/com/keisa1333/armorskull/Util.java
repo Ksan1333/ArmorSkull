@@ -29,6 +29,14 @@ public class Util {
         return true;
     }
 
+    public static boolean checkItem(CommandSender sender, ItemStack item) {
+        if (item == null) {
+            sender.sendMessage("§cアイテムを手に持ってください！");
+            return false;
+        }
+        return true;
+    }
+
     // NBTItemからisSettingの値を取得するメソッド
     public static boolean getIsSetting(NBTItem nbti) {
         return nbti.getBoolean("armorskull.isSetting");

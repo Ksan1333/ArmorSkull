@@ -14,12 +14,18 @@ public class Enchant implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
-        if (!Util.checkArguments(sender, args, 2)) {
-            sender.sendMessage("§c引数が足りません！/as enchant <enchant type> [<level>]");
-            return false;
-        }
-
         Player player = (Player) sender;
+        ItemStack item = player.getInventory().getItemInMainHand();
+
+        if (args[1].equalsIgnoreCase("clear")) {
+            item.getEnchantments().forEach((enchantment, level) -> {
+                item.removeEnchantment(enchantment);
+            });
+
+            player.getInventory().setItemInMainHand(item);
+            player.sendMessage("§7エンチャントを削除しました！");
+            return true;
+        }
 
         String enchantmentName = args[1].toLowerCase();
 
@@ -35,7 +41,6 @@ public class Enchant implements CommandExecutor {
                 enchantLevel = Integer.parseInt(args[2]);
             }
 
-            ItemStack item = player.getInventory().getItemInMainHand();
             ItemMeta itemMeta = item.getItemMeta();
 
             itemMeta.addEnchant(enchantment, enchantLevel, true); // エンチャントを追加（レベル1）

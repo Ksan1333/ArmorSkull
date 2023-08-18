@@ -1,5 +1,6 @@
 package com.keisa1333.armorskull.command.armorskull;
 
+import com.google.common.collect.Multimap;
 import com.keisa1333.armorskull.Util;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -11,16 +12,21 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.Map;
 import java.util.UUID;
 
 public class Modify implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
-        if (!Util.checkArguments(sender, args,4)) {
-            //<0,1,2> ADD_SCALAR（スカラー値を加算）、MULTIPLY_SCALAR_1（スカラー値を乗算）、MULTIPLY_SCALAR_2（スカラー値を2倍乗算）
-            player.sendMessage("§c使用法: /as modify <attribute> <number> <0,1,2>");
-            return false;
+        ItemStack item = player.getInventory().getItemInMainHand();
+        ItemMeta itemMeta = item.getItemMeta();
+
+        if (args[1].equalsIgnoreCase("clear")) {
+            itemMeta.removeAttributeModifier(EquipmentSlot.HAND);
+            item.setItemMeta(itemMeta);
+            player.sendMessage("§7属性を削除しました！");
+            return true;
         }
 
         int scalar;
@@ -47,7 +53,6 @@ public class Modify implements CommandExecutor {
             player.sendMessage("§c第３引数は数値で入力してください。");
             return false;
         }
-        ItemStack item = player.getInventory().getItemInMainHand();
         item = createCustomItem(attributeName, amount, item, sender);
 
         player.getPlayer().getInventory().setItemInMainHand(item);

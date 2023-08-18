@@ -12,20 +12,9 @@ public class Create implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
-        if (!Util.checkArguments(sender, args, 2)) {
-            sender.sendMessage("§c引数が足りません！/as create <durability>");
-            return false;
-        }
-
         Player player = (Player) sender;
         ItemStack item = player.getInventory().getItemInMainHand();
-
-        if (!Util.checkPlayerHead(sender, item)) { return false; }
-
         NBTItem nbti = new NBTItem(item);
-        boolean isSetting = Util.getIsSetting(nbti);
-
-        if (!Util.checkIsSetting(sender, isSetting, false)) { return false; }
 
         try {
             nbti.setBoolean("armorskull.isAnvil", false);
@@ -34,6 +23,7 @@ public class Create implements CommandExecutor {
             nbti.setBoolean("armorskull.isMend", true);
             nbti.setBoolean("armorskull.isSetting", true);
             nbti.setString("armorskull.isAnvilItem", "");
+            nbti.setString("armorskull.damageCause", "default");
             ItemStack head = nbti.getItem();
             player.getPlayer().getInventory().setItemInMainHand(head);
 

@@ -15,13 +15,6 @@ public class Repair implements CommandExecutor {
         Player player = (Player) sender;
         ItemStack item = player.getInventory().getItemInMainHand();
 
-        if (!Util.checkPlayerHead(sender, item)) return false;
-
-        NBTItem nbti = new NBTItem(item);
-        boolean isSetting = Util.getIsSetting(nbti);
-
-        if (!Util.checkIsSetting(sender, isSetting, true)) return false;
-
         try {
             int[] durability = Durability.getDurability(item);
             int toDurability = 0;
@@ -44,7 +37,7 @@ public class Repair implements CommandExecutor {
                         toDurability = 0;
                     }
                 } else {
-                    sender.sendMessage("§c有効な値を入力してください(整数、all)");
+                    sender.sendMessage("§c有効な値を入力してください(all|0|number)");
                 }
             }
 

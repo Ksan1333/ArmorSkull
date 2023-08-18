@@ -1,11 +1,14 @@
 package com.keisa1333.armorskull.command;
 
+import com.keisa1333.armorskull.Util;
 import com.keisa1333.armorskull.command.armorskull.*;
+import de.tr7zw.changeme.nbtapi.NBTItem;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -191,57 +194,127 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
+
+        Player player = (Player) sender;
+        ItemStack item = player.getInventory().getItemInMainHand();
+        NBTItem nbti = new NBTItem(item);
+        boolean isSetting = Util.getIsSetting(nbti);
+
+        if (args[0].equalsIgnoreCase("damage") || args[0].equalsIgnoreCase("durability") || args[0].equalsIgnoreCase("info") || args[0].equalsIgnoreCase("remove") || args[0].equalsIgnoreCase("repair") || args[0].equalsIgnoreCase("setting")) {
+            if (!Util.checkPlayerHead(sender, item)) return false;
+            if (!Util.checkIsSetting(sender, isSetting, true)) return false;
+        }
+
+        if (args[0].equalsIgnoreCase("enchant") || args[0].equalsIgnoreCase("modify") || args[0].equalsIgnoreCase("rename")) {
+            if (!Util.checkItem(sender, item)) return false;
+        }
+
+        if (args[0].equalsIgnoreCase("create")) {
+            if (Util.checkPlayerHead(sender, item)) { return false; }
+            if (!Util.checkIsSetting(sender, isSetting, true)) { return false; }
+        }
+
         if (args.length > 0) {
             String commandName = args[0].toLowerCase();
             switch (commandName) {
-                case "durability":
-                    Durability durability = new Durability();
-                    durability.onCommand(sender, cmd, a, args);
-                    return true;
-                case "setting":
-                    Setting setting = new Setting();
-                    setting.onCommand(sender, cmd, a, args);
-                    return true;
-                case "create":
-                    Create create = new Create();
-                    create.onCommand(sender, cmd, a, args);
-                    return true;
-                case "repair":
-                    Repair repair = new Repair();
-                    repair.onCommand(sender, cmd, a, args);
-                    return true;
-                case "remove":
-                    Remove remove = new Remove();
-                    remove.onCommand(sender, cmd, a, args);
-                    return true;
-                case "info":
-                    Info info = new Info();
-                    info.onCommand(sender, cmd, a, args);
-                    return true;
-                case "help":
-                    Help help = new Help();
-                    help.onCommand(sender, cmd, a, args);
-                    return true;
-                case "enchant":
-                    Enchant enchant = new Enchant();
-                    enchant.onCommand(sender, cmd, a, args);
-                    return true;
-                case "rename":
-                    Rename rename = new Rename();
-                    rename.onCommand(sender, cmd, a, args);
-                    return true;
-                case "modify":
-                    Modify modify = new Modify();
-                    modify.onCommand(sender, cmd, a, args);
-                    return true;
-                case "displaylore":
-                    DisplayLore displayLore = new DisplayLore();
-                    displayLore.onCommand(sender, cmd, a, args);
-                    return true;
                 case "anvilitem":
                     AnvilItem anvilItem = new AnvilItem();
                     anvilItem.onCommand(sender, cmd, a, args);
                     return true;
+
+                case "create":
+                    if (!Util.checkArguments(sender, args, 2)) {
+                        sender.sendMessage("§c引数が足りません！/as create <durability>");
+                        return false;
+                    }
+                    Create create = new Create();
+                    create.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "damage":
+                    if (!args[1].equalsIgnoreCase("clear") && !args[1].equalsIgnoreCase("default") && !Util.checkArguments(sender, args, 3)) {
+                        sender.sendMessage("§c引数が足りません！/as damage (clear|default|add <damagecause>)");
+                        return false;
+                    }
+                    DamageCause damage = new DamageCause();
+                    damage.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "displaylore":
+                    if (!Util.checkArguments(sender, args, 2)) {
+                        sender.sendMessage("§c引数が足りません！/as displaylore (japanese|default|number|bar)");
+                        return false;
+                    }
+                    DisplayLore displayLore = new DisplayLore();
+                    displayLore.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "durability":
+                    if (!Util.checkArguments(sender, args, 2)) {
+                        sender.sendMessage("§c引数が足りません！/as durability <durability>");
+                        return false;
+                    }
+                    Durability durability = new Durability();
+                    durability.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "enchant":
+                    if (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 3)) {
+                        sender.sendMessage("§c引数が足りません！/as enchant (clear|<enchant type> [<level>])");
+                        return false;
+                    }
+                    Enchant enchant = new Enchant();
+                    enchant.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "help":
+                    Help help = new Help();
+                    help.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "info":
+                    Info info = new Info();
+                    info.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "modify":
+                    if (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args,4)) {
+                        //<0,1,2> ADD_SCALAR（スカラー値を加算）、MULTIPLY_SCALAR_1（スカラー値を乗算）、MULTIPLY_SCALAR_2（スカラー値を2倍乗算）
+                        player.sendMessage("§c引数が足りません！/as modify (clear|<attribute> <number> <0,1,2>)");
+                        return false;
+                    }
+                    Modify modify = new Modify();
+                    modify.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "remove":
+                    Remove remove = new Remove();
+                    remove.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "rename":
+                    if (!Util.checkArguments(sender, args, 2)) {
+                        sender.sendMessage("§c引数が足りません！/as rename (clear|<name>)");
+                        return false;
+                    }
+                    Rename rename = new Rename();
+                    rename.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "repair":
+                    if (!Util.checkArguments(sender, args, 2)) {
+                        sender.sendMessage("§c引数が足りません！/as repair (all|0|<number>)");
+                        return false;
+                    }
+                    Repair repair = new Repair();
+                    repair.onCommand(sender, cmd, a, args);
+                    return true;
+
+                case "setting":
+                    Setting setting = new Setting();
+                    setting.onCommand(sender, cmd, a, args);
+                    return true;
+
                 default:
                     sender.sendMessage("§cそのようなサブコマンドは登録されていません。/as helpを用いて確認してください。");
                     break;

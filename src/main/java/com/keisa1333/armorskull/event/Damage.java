@@ -4,6 +4,7 @@ import com.keisa1333.armorskull.Util;
 import com.keisa1333.armorskull.command.armorskull.Durability;
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -74,7 +75,8 @@ public class Damage implements Listener {
 
                         //耐久値が0以下になる時
                         if (nowD <= 0) {
-                            if (nbti.getBoolean("isVanish")) {
+                            if (!nbti.getBoolean("armorskull.isVanish")) {
+                                player.sendMessage("vanish!");
                                 Durability.setDurability(durability[0], 0, helmet, player, "head");
                                 int emptySlot = player.getInventory().firstEmpty();
 
@@ -82,13 +84,20 @@ public class Damage implements Listener {
                                 if (emptySlot != -1) {
                                     player.getInventory().setItem(emptySlot, helmet);
                                     player.getInventory().setHelmet(null);
+                                    player.sendMessage("§cArmorSkullの耐久値がないためインベントリに移しました");
+                                    player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_TRADE, 1.0f, 1.0f);
+
                                     //空きスロットがない場合、ドロップする
                                 } else {
                                     player.getInventory().setHelmet(null);
                                     player.getWorld().dropItem(player.getLocation(), helmet);
+                                    player.sendMessage("§cArmorSkullの耐久値がないためドロップしました");
+                                    player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_TRADE, 1.0f, 1.0f);
                                 }
                             } else {
                                 player.getInventory().setHelmet(null);
+                                player.playSound(player.getLocation(), Sound.ITEM_ARMOR_EQUIP_GENERIC, 1.0f, 1.0f);
+                                player.sendMessage("§cArmorSkullが壊れました");
                             }
 
                             //耐久値が0より大きい時

@@ -20,20 +20,8 @@ public class Durability implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
-        if (!Util.checkArguments(sender, args, 2)) {
-            sender.sendMessage("§c引数が足りません！/as durability <durability>");
-            return false;
-        }
-
         Player player = (Player) sender;
         ItemStack item = player.getInventory().getItemInMainHand();
-
-        if (!Util.checkPlayerHead(sender, item)) { return false; }
-
-        NBTItem nbti = new NBTItem(item);
-        boolean isSetting = Util.getIsSetting(nbti);
-
-        if (!Util.checkIsSetting(sender, isSetting, true)) { return false; }
 
         try {
             int durability = Integer.parseInt(args[1]);

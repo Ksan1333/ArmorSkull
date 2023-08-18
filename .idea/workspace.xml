@@ -4,14 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="failed">
+    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="Update Rename (RGB colorcode, clear)">
+      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" afterDir="false" />
       <change beforePath="D:/ArmorSkull/.idea/workspace.xml" beforeDir="false" afterPath="D:/ArmorSkull/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/pom.xml" beforeDir="false" afterPath="D:/ArmorSkull/pom.xml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/Util.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/Util.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Create.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Create.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Durability.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Durability.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Enchant.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Enchant.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Remove.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Remove.java" afterDir="false" />
       <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Repair.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Repair.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Setting.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Setting.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Damage.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Damage.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/resources/plugin.yml" beforeDir="false" afterPath="D:/ArmorSkull/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
@@ -34,21 +56,23 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/ArmorSkull/test/plugins",
+    "last_opened_file_path": "D:/ArmorSkull/target",
     "project.structure.last.edited": "プロジェクト",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ArmorSkull\target" />
       <recent name="D:\ArmorSkull\test\plugins" />
       <recent name="D:\ArmorSkull\src\main\resources" />
       <recent name="D:\ArmorSkull\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ArmorSkull\test\plugins" />
       <recent name="D:\ArmorSkull\target" />
+      <recent name="D:\ArmorSkull\test\plugins" />
       <recent name="D:\ArmorSkull" />
     </key>
   </component>
@@ -135,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692240232137</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update Rename (RGB colorcode, clear)">
+      <option name="closed" value="true" />
+      <created>1692258706364</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692258706364</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -143,6 +175,7 @@
     <MESSAGE value="SNAPSHOT commit" />
     <MESSAGE value="0.1.3 Update!" />
     <MESSAGE value="failed" />
-    <option name="LAST_COMMIT_MESSAGE" value="failed" />
+    <MESSAGE value="Update Rename (RGB colorcode, clear)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Rename (RGB colorcode, clear)" />
   </component>
 </project>

@@ -34,13 +34,15 @@ public class Help implements CommandExecutor {
 
         Component content2 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭をArmor仕様にします。\n<durability>は設定する耐久値です。\nその後、/as settingから詳細な設定ができます。\"><click:suggest_command:/armorskull create >/as create <durability>");
 
-        Component content3 = mm.deserialize("<gray><hover:show_text:\"<blue>耐久値の表記を変更することができます。\n(default, number, japanese, bar)\"><click:suggest_command:/armorskull displayLore >/as displayLore <type>");
+        Component content3 = mm.deserialize("<gray><hover:show_text:\"<blue>防具耐久値が減るダメージソースを編集できます。\nデフォルトでは通常の防具と同じ設定です。\nダメージソースは複数追加できます。\n設定項目は、クリックで出てくるリンクを参照してください。\"><click:open_url:https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html>/as damage (clear|default|add <damege cause>)");
 
-        Component content4 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭の最大耐久値を設定できます。\n<durability>は設定する耐久値です。\n耐久値説明文を上書きした際は、repairコマンドを使用するなどすれば再表示されます。\"><click:suggest_command:/armorskull durability >/as durability <durability>");
+        Component content4 = mm.deserialize("<gray><hover:show_text:\"<blue>耐久値の表記を変更することができます。\n(default, number, japanese, bar)\"><click:suggest_command:/armorskull displayLore >/as displayLore <type>");
 
-        Component content5 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭にエンチャを付与します。\n<type>はエンチャ名、[<level>]はレベル。\n[<level>]を入力しなかった場合、レベル1で設定されます。\"><click:suggest_command:/armorskull enchant >/as enchant <type> [<level>]");
+        Component content5 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭の最大耐久値を設定できます。\n<durability>は設定する耐久値です。\n耐久値説明文を上書きした際は、repairコマンドを使用するなどすれば再表示されます。\"><click:suggest_command:/armorskull durability >/as durability <durability>");
 
-        Component content6 = mm.deserialize("<gray><hover:show_text:\"<blue>armorskullコマンドのヘルプを参照できます。\"><click:suggest_command:/armorskull help>/as help");
+        Component content6 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭にエンチャを付与します。\n<type>はエンチャ名、[<level>]はレベル。\n[<level>]を入力しなかった場合、レベル1で設定されます。\"><click:suggest_command:/armorskull enchant >/as enchant (clear|<type> [<level>])");
+
+        Component content7 = mm.deserialize("<gray><hover:show_text:\"<blue>armorskullコマンドのヘルプを参照できます。\"><click:suggest_command:/armorskull help>/as help");
 
         Component next = mm.deserialize("<yellow><click:run_command:/armorskull help 2>[NEXT]");
 
@@ -51,6 +53,7 @@ public class Help implements CommandExecutor {
         player.sendMessage(content4);
         player.sendMessage(content5);
         player.sendMessage(content6);
+        player.sendMessage(content7);
         player.sendMessage(next);
     }
 
@@ -62,11 +65,11 @@ public class Help implements CommandExecutor {
 
         Component content1 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭の情報を確認できます。\"><click:suggest_command:/armorskull info>/as info");
 
-        Component content2 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭に属性を追加できます。\n<attribute> (maxhealth, speed, knockback, armor, toughness)\n<amount>属性の値\n<scalar> (0 (加算),1 (乗算),2 (2倍乗算))\"><click:suggest_command:/armorskull modify >/as modify <attribute> <amount> <scalar>");
+        Component content2 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭に属性を追加できます。\n<attribute> (maxhealth, speed, knockback, armor, toughness)\n<amount>属性の値\n<scalar> (0 (加算),1 (乗算),2 (2倍乗算))\"><click:suggest_command:/armorskull modify >/as modify (clear|<attribute> <amount> <scalar>)");
 
         Component content3 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭のArmor仕様を削除します。\"><click:suggest_command:/armorskull remove>/as remove");
 
-        Component content4 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭の名前を変更できます。\n<name>は設定する名前です。\nカラーコードの接頭辞は&です。\"><click:suggest_command:/as rename >/armorskull rename <name>");
+        Component content4 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭の名前を変更できます。\n<name>は設定する名前です。\nカラーコードの接頭辞は&、#です。\n&の場合は1~0、a~f、nmkなどがあります。\n#の場合、六桁のrgbカラーコードをお使いください。\"><click:suggest_command:/as rename >/armorskull rename (clear|<name>)");
 
         Component content5 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭の耐久値を増減できます。\n<number>は設定する増減値です。\n正の値も負の値も対応しています。\"><click:suggest_command:/as repair >/armorskull repair <number>");
 

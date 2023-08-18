@@ -16,17 +16,14 @@ public class Rename implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
-        if (!Util.checkArguments(sender, args, 2)) {
-            sender.sendMessage("§c引数が足りません！/as name <name>/clear [<RGB Color>]");
-            return false;
-        }
-
         Player player = (Player) sender;
         ItemStack item = player.getInventory().getItemInMainHand();
         ItemMeta itemMeta = item.getItemMeta();
 
         if (args[1].equalsIgnoreCase("clear")) {
-            itemMeta.setDisplayName(null);
+            itemMeta.setDisplayName("");
+            item.setItemMeta(itemMeta);
+            player.sendMessage("§7アイテム名をリセットしました！");
             return true;
         }
 
@@ -52,11 +49,8 @@ public class Rename implements CommandExecutor {
                     String hexColor = names[i]; // 6文字の16進数カラーコード
 
                     String redHex = hexColor.substring(0, 2);     // 最初の2文字 (FF)
-                    player.sendMessage(redHex);
                     String greenHex = hexColor.substring(2, 4);   // 次の2文字 (AA)
-                    player.sendMessage(greenHex);
                     String blueHex = hexColor.substring(4, 6);    // 最後の2文字 (BB)
-                    player.sendMessage(blueHex);
 
                     int red = Integer.parseInt(redHex, 16);       // 16進数文字列を10進数数値に変換
                     int green = Integer.parseInt(greenHex, 16);
@@ -81,6 +75,7 @@ public class Rename implements CommandExecutor {
 
         itemMeta.setDisplayName(newName);
         item.setItemMeta(itemMeta);
+        player.sendMessage("§7アイテム名を " + newName + " §7で設定しました！");
         return true;
     }
 }
