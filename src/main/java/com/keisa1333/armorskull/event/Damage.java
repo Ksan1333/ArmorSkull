@@ -3,9 +3,11 @@ package com.keisa1333.armorskull.event;
 import com.keisa1333.armorskull.Util;
 import com.keisa1333.armorskull.command.armorskull.Durability;
 import de.tr7zw.changeme.nbtapi.NBTItem;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -33,16 +35,22 @@ public class Damage implements Listener {
 
         int nowD;
         int[] durability = Durability.getDurability(helmet);
-        Map<Enchantment, Integer> enchantments = helmet.getEnchantments();
-
         EntityDamageEvent.DamageCause cause = event.getCause();
-//        player.sendMessage(cause.toString());
-
-        // Check for specific causes of damage
         String damageCause = nbti.getString("armorskull.damageCause");
+
+        player.sendMessage("cause: " + cause);
+        player.sendMessage("damageCause: " + damageCause);
+
+        String[] causes = damageCause.split(",");
+        int j = 0;
+        for (String s : causes) {
+            player.sendMessage("causes: " + s);
+            if (cause.toString().equalsIgnoreCase(s)) j = 1;
+        }
+
         if (damageCause.contains("default")) {
             if (
-                    cause != EntityDamageEvent.DamageCause.ENTITY_ATTACK &&
+                    (cause != EntityDamageEvent.DamageCause.ENTITY_ATTACK &&
                             cause != EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK &&
                             cause != EntityDamageEvent.DamageCause.PROJECTILE &&
                             cause != EntityDamageEvent.DamageCause.LIGHTNING &&
@@ -53,15 +61,12 @@ public class Damage implements Listener {
                             cause != EntityDamageEvent.DamageCause.CONTACT &&
                             cause != EntityDamageEvent.DamageCause.ENTITY_EXPLOSION &&
                             cause != EntityDamageEvent.DamageCause.SONIC_BOOM &&
-                            cause != EntityDamageEvent.DamageCause.THORNS
+                            cause != EntityDamageEvent.DamageCause.THORNS)
+                    && j != 1
             ) return;
-
-        } else {
-            String[] causes = damageCause.split(",");
-            for (int i = 0; i < causes.length; i++) {
-                if (!cause.toString().equals(causes[i])) return;
-            }
         }
+
+        if (j != 1) return;
 
         //耐久値が0なのに着用していた場合
         if (durability[1] <= 0) {
@@ -69,6 +74,8 @@ public class Damage implements Listener {
             double damage = event.getDamage();
             player.damage(damage);
         }
+
+        Map<Enchantment, Integer> enchantments = helmet.getEnchantments();
 
         //耐久力エンチャがついてた時の処理
         if (enchantments.containsKey(Enchantment.DURABILITY)) {
@@ -85,11 +92,6 @@ public class Damage implements Listener {
 
         //耐久力エンチャがないときの処理
         } else {
-            nowD = durability[1] - 1;
-        }
-
-        //棘の鎧エンチャがついてた時の処理
-        if (enchantments.containsKey(Enchantment.THORNS)) {
             nowD = durability[1] - 1;
         }
 
@@ -123,33 +125,45 @@ public class Damage implements Listener {
             }
 
         //耐久値が0より大きい時
-        } else if (nowD > 0) {
+        } else {
             Durability.setDurability(durability[0], nowD, helmet, player, "head");
         }
     }
 
     @EventHandler
     public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
-        if (!(event.getEntity() instanceof Player) && !(event.getDamager() instanceof Player)) return;
+        if (!(event.getDamager() instanceof Player)) return;
 
         Player attacker = (Player) event.getDamager();
+        Entity defender = event.getEntity();
         ItemStack helmet = attacker.getInventory().getHelmet();
 
         if (helmet == null || (helmet.getType() != Material.PLAYER_HEAD && helmet.getType() != Material.PLAYER_WALL_HEAD)) return;
 
-        NBTItem nbti = new NBTItem(helmet);
+        NBTItem nbti;
+        try {
+            nbti = new NBTItem(helmet);
+        } catch (Exception e) {
+            return;
+        }
 
         if (!Util.getIsSetting(nbti)) return;
 
         int nowD;
         int[] durability = Durability.getDurability(helmet);
+        EntityDamageEvent.DamageCause cause = event.getCause();
+        String damageCause = nbti.getString("armorskull.damageCause");
 
-        // ダメージを与える側のプレイヤーが棘の鎧を装備しているかチェック
-        if (attacker.getInventory().getArmorContents()[2] != null) {
-            if (attacker.getInventory().getArmorContents()[2].containsEnchantment(org.bukkit.enchantments.Enchantment.THORNS)) {
-                nowD = durability[1] - 2;
-                Durability.setDurability(durability[0], nowD, helmet, attacker, "head");
-            }
+        if (!damageCause.contains("default") && !damageCause.contains("THORNS")) return;
+
+        if (cause != EntityDamageEvent.DamageCause.THORNS) return;
+
+        Map<Enchantment, Integer> enchantments = helmet.getEnchantments();
+
+        if (enchantments.containsKey(Enchantment.THORNS)) {
+            Bukkit.broadcastMessage(attacker.toString() + defender + " 4");
+            nowD = durability[1] - 2;
+            Durability.setDurability(durability[0], nowD, helmet, attacker, "head");
         }
     }
 }

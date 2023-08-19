@@ -18,14 +18,15 @@ public class Help implements CommandExecutor {
         Player player = (Player) sender;
         ItemStack item = player.getInventory().getItemInMainHand();
 
-        if (args.length == 1 || args[1].equalsIgnoreCase("nbt")) {
+        if (args.length == 1 || args[1].equalsIgnoreCase("1")) {
+            helpList1(sender);
+            return true;
+        }
+
+        if (args[1].equalsIgnoreCase("nbt")) {
             ReadWriteNBT nbt = NBT.itemStackToNBT(item);
             String str = nbt.toString();
             player.sendMessage(str);
-        }
-
-        if (args.length == 1 || args[1].equalsIgnoreCase("1")) {
-            helpList1(sender);
             return true;
         }
 

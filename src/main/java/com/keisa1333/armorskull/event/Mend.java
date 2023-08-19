@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 
 public class Mend implements Listener {
     private boolean isMendEventExecuted = false;
@@ -25,6 +26,7 @@ public class Mend implements Listener {
         if (!isMendEventExecuted) {
             Player player = event.getPlayer();
             String randomElement = this.checkMending(player);
+            if (randomElement == null) return;
 
             if (randomElement.equalsIgnoreCase("HEAD")) {
                 int repairAmount = event.getAmount() * 2;
@@ -64,7 +66,12 @@ public class Mend implements Listener {
 
     public String checkMending(Player player) {
         ItemStack helmet = player.getInventory().getHelmet();
-        NBTItem nbti = new NBTItem(helmet);
+        NBTItem nbti = null;
+        try {
+            nbti = new NBTItem(helmet);
+        } catch (Exception e) {
+            return null;
+        }
 
         if (Util.getIsSetting(nbti)) {
 

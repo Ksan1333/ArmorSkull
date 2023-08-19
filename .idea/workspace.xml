@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="fix Bug, add SE breaking skull etc...">
-      <change afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Hideflags.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/.gitignore" beforeDir="false" afterPath="D:/ArmorSkull/.gitignore" afterDir="false" />
+    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="add Hideflags, Modify clear.">
       <change beforePath="D:/ArmorSkull/.idea/workspace.xml" beforeDir="false" afterPath="D:/ArmorSkull/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/pom.xml" beforeDir="false" afterPath="D:/ArmorSkull/pom.xml" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/Util.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/Util.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/AnvilItem.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/AnvilItem.java" afterDir="false" />
       <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" afterDir="false" />
       <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" afterDir="false" />
       <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Damage.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Damage.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/resources/plugin.yml" beforeDir="false" afterPath="D:/ArmorSkull/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Mend.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Mend.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,12 +60,12 @@
       <recent name="D:\ArmorSkull\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ArmorSkull\target" />
       <recent name="D:\ArmorSkull\test\plugins" />
+      <recent name="D:\ArmorSkull\target" />
       <recent name="D:\ArmorSkull" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR アプリケーション.RunServer">
+  <component name="RunManager" selected="Maven.ArmorSkull package">
     <configuration name="RunServer" type="JarApplication">
       <option name="JAR_PATH" value="D:/ArmorSkull/test/paper-1.20.1-84.jar" />
       <option name="PROGRAM_PARAMETERS" value="nogui" />
@@ -171,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692318117411</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add Hideflags, Modify clear.">
+      <option name="closed" value="true" />
+      <created>1692372933838</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1692372933838</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -181,6 +182,7 @@
     <MESSAGE value="failed" />
     <MESSAGE value="Update Rename (RGB colorcode, clear)" />
     <MESSAGE value="fix Bug, add SE breaking skull etc..." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix Bug, add SE breaking skull etc..." />
+    <MESSAGE value="add Hideflags, Modify clear." />
+    <option name="LAST_COMMIT_MESSAGE" value="add Hideflags, Modify clear." />
   </component>
 </project>

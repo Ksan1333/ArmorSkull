@@ -1,27 +1,27 @@
 package com.keisa1333.armorskull.command.armorskull;
 
-import com.keisa1333.armorskull.Util;
 import net.md_5.bungee.api.ChatColor;
-import org.apache.logging.log4j.util.StringBuilders;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Rename implements CommandExecutor {
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String a, String[] args) {
         Player player = (Player) sender;
         ItemStack item = player.getInventory().getItemInMainHand();
         ItemMeta itemMeta = item.getItemMeta();
 
         if (args[1].equalsIgnoreCase("clear")) {
-            itemMeta.setDisplayName("");
+            Objects.requireNonNull(itemMeta).setDisplayName("");
             item.setItemMeta(itemMeta);
             player.sendMessage("§7アイテム名をリセットしました！");
             return true;
@@ -44,7 +44,6 @@ public class Rename implements CommandExecutor {
             sb = new StringBuilder();
             String[] names = newName.split("#");
             for (int i = 0; i < names.length; i++) {
-//                player.sendMessage(names[i]);
                 if (names[i].matches("^[0-9A-Fa-f]{6}.*$")) {
                     String hexColor = names[i]; // 6文字の16進数カラーコード
 
@@ -59,7 +58,6 @@ public class Rename implements CommandExecutor {
                     // RGBカラーコードを作成
                     ChatColor color = ChatColor.of(new java.awt.Color(red, green, blue));   // 次の2文字 (AA)
                     String text = hexColor.substring(6);
-//                    player.sendMessage(text);
                     sb.append(color).append(text);
                 } else {
                     if (i == 0) {
@@ -73,7 +71,7 @@ public class Rename implements CommandExecutor {
         }
 
 
-        itemMeta.setDisplayName(newName);
+        Objects.requireNonNull(itemMeta).setDisplayName(newName);
         item.setItemMeta(itemMeta);
         player.sendMessage("§7アイテム名を " + newName + " §7で設定しました！");
         return true;
