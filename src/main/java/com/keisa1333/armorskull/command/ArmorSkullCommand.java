@@ -31,7 +31,7 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
 
         if (args.length == 1) {
             if (args[0].length() == 0) {
-                return Arrays.asList("anvilitem", "create", "displaylore", "durability", "enchant", "help", "modify", "remove", "rename", "repair", "info", "setting");
+                return Arrays.asList("create", "displaylore", "durability", "enchant", "help", "modify", "remove", "rename", "repair", "info", "setting");
             } else {
                 if ("create".startsWith(args[0])) {
                     return Collections.singletonList("create");
@@ -53,8 +53,6 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
                     return Collections.singletonList("info");
                 } else if ("setting".startsWith(args[0])) {
                     return Collections.singletonList("setting");
-                } else if ("anvilitem".startsWith(args[0])) {
-                    return Collections.singletonList("anvilitem");
                 } else if ("displaylore".startsWith(args[0])) {
                     return Collections.singletonList("displaylore");
                 }
@@ -196,6 +194,11 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command cmd, String a, String[] args) {
         Player player = (Player) sender;
 
+        if (args.length < 1) {
+            sender.sendMessage("§c引数が足りません");
+            return false;
+        }
+
         if (args[0].equalsIgnoreCase("damage") || args[0].equalsIgnoreCase("durability") || args[0].equalsIgnoreCase("info") || args[0].equalsIgnoreCase("remove") || args[0].equalsIgnoreCase("repair") || args[0].equalsIgnoreCase("setting")) {
             ItemStack item = player.getInventory().getItemInMainHand();
             NBTItem nbti;
@@ -237,120 +240,113 @@ public class ArmorSkullCommand implements CommandExecutor, TabCompleter {
             if (!Util.checkIsSetting(sender, isSetting, false)) return false;
         }
 
-        if (args.length > 0) {
-            String commandName = args[0].toLowerCase();
-            switch (commandName) {
-                case "anvilitem":
-                    AnvilItem anvilItem = new AnvilItem();
-                    anvilItem.onCommand(sender, cmd, a, args);
-                    return true;
+        String commandName = args[0].toLowerCase();
+        switch (commandName) {
+            case "create":
+                if (!Util.checkArguments(sender, args, 2)) {
+                    sender.sendMessage("§c引数が足りません！/as create <durability>");
+                    return false;
+                }
+                Create create = new Create();
+                create.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "create":
-                    if (!Util.checkArguments(sender, args, 2)) {
-                        sender.sendMessage("§c引数が足りません！/as create <durability>");
-                        return false;
-                    }
-                    Create create = new Create();
-                    create.onCommand(sender, cmd, a, args);
-                    return true;
+            case "damage":
+                if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !args[1].equalsIgnoreCase("default") && !Util.checkArguments(sender, args, 3))) {
+                    sender.sendMessage("§c引数が足りません！/as damage (clear|default|add <damagecause>)");
+                    return false;
+                }
+                DamageCause damage = new DamageCause();
+                damage.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "damage":
-                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !args[1].equalsIgnoreCase("default") && !Util.checkArguments(sender, args, 3))) {
-                        sender.sendMessage("§c引数が足りません！/as damage (clear|default|add <damagecause>)");
-                        return false;
-                    }
-                    DamageCause damage = new DamageCause();
-                    damage.onCommand(sender, cmd, a, args);
-                    return true;
+            case "displaylore":
+                if (!Util.checkArguments(sender, args, 2)) {
+                    sender.sendMessage("§c引数が足りません！/as displaylore (japanese|default|number|bar)");
+                    return false;
+                }
+                DisplayLore displayLore = new DisplayLore();
+                displayLore.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "displaylore":
-                    if (!Util.checkArguments(sender, args, 2)) {
-                        sender.sendMessage("§c引数が足りません！/as displaylore (japanese|default|number|bar)");
-                        return false;
-                    }
-                    DisplayLore displayLore = new DisplayLore();
-                    displayLore.onCommand(sender, cmd, a, args);
-                    return true;
+            case "durability":
+                if (!Util.checkArguments(sender, args, 2)) {
+                    sender.sendMessage("§c引数が足りません！/as durability <durability>");
+                    return false;
+                }
+                Durability durability = new Durability();
+                durability.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "durability":
-                    if (!Util.checkArguments(sender, args, 2)) {
-                        sender.sendMessage("§c引数が足りません！/as durability <durability>");
-                        return false;
-                    }
-                    Durability durability = new Durability();
-                    durability.onCommand(sender, cmd, a, args);
-                    return true;
+            case "enchant":
+                if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 3))) {
+                    sender.sendMessage("§c引数が足りません！/as enchant (clear|<enchant type> [<level>])");
+                    return false;
+                }
+                Enchant enchant = new Enchant();
+                enchant.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "enchant":
-                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 3))) {
-                        sender.sendMessage("§c引数が足りません！/as enchant (clear|<enchant type> [<level>])");
-                        return false;
-                    }
-                    Enchant enchant = new Enchant();
-                    enchant.onCommand(sender, cmd, a, args);
-                    return true;
+            case "help":
+                Help help = new Help();
+                help.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "help":
-                    Help help = new Help();
-                    help.onCommand(sender, cmd, a, args);
-                    return true;
+            case "hideflags":
+                if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 2))) {
+                    sender.sendMessage("§c引数が足りません！/as hideflags (clear|0|255|<number>)");
+                    return false;
+                }
+                Hideflags hidef = new Hideflags();
+                hidef.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "hideflags":
-                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 2))) {
-                        sender.sendMessage("§c引数が足りません！/as hideflags (clear|0|255|<number>)");
-                        return false;
-                    }
-                    Hideflags hidef = new Hideflags();
-                    hidef.onCommand(sender, cmd, a, args);
-                    return true;
+            case "info":
+                Info info = new Info();
+                info.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "info":
-                    Info info = new Info();
-                    info.onCommand(sender, cmd, a, args);
-                    return true;
+            case "modify":
+                if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args,5))) {
+                    //<0,1,2> ADD_SCALAR（スカラー値を加算）、MULTIPLY_SCALAR_1（スカラー値を乗算）、MULTIPLY_SCALAR_2（スカラー値を2倍乗算）
+                    player.sendMessage("§c引数が足りません！/as modify (clear|<attribute> <number> <0,1,2> <slot>)");
+                    return false;
+                }
+                Modify modify = new Modify();
+                modify.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "modify":
-                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args,5))) {
-                        //<0,1,2> ADD_SCALAR（スカラー値を加算）、MULTIPLY_SCALAR_1（スカラー値を乗算）、MULTIPLY_SCALAR_2（スカラー値を2倍乗算）
-                        player.sendMessage("§c引数が足りません！/as modify (clear|<attribute> <number> <0,1,2> <slot>)");
-                        return false;
-                    }
-                    Modify modify = new Modify();
-                    modify.onCommand(sender, cmd, a, args);
-                    return true;
+            case "remove":
+                Remove remove = new Remove();
+                remove.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "remove":
-                    Remove remove = new Remove();
-                    remove.onCommand(sender, cmd, a, args);
-                    return true;
+            case "rename":
+                if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 2))) {
+                    sender.sendMessage("§c引数が足りません！/as rename (clear|<name>)");
+                    return false;
+                }
+                Rename rename = new Rename();
+                rename.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "rename":
-                    if (args.length == 1 || (!args[1].equalsIgnoreCase("clear") && !Util.checkArguments(sender, args, 2))) {
-                        sender.sendMessage("§c引数が足りません！/as rename (clear|<name>)");
-                        return false;
-                    }
-                    Rename rename = new Rename();
-                    rename.onCommand(sender, cmd, a, args);
-                    return true;
+            case "repair":
+                if (!Util.checkArguments(sender, args, 2)) {
+                    sender.sendMessage("§c引数が足りません！/as repair (all|0|<number>)");
+                    return false;
+                }
+                Repair repair = new Repair();
+                repair.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "repair":
-                    if (!Util.checkArguments(sender, args, 2)) {
-                        sender.sendMessage("§c引数が足りません！/as repair (all|0|<number>)");
-                        return false;
-                    }
-                    Repair repair = new Repair();
-                    repair.onCommand(sender, cmd, a, args);
-                    return true;
+            case "setting":
+                Setting setting = new Setting();
+                setting.onCommand(sender, cmd, a, args);
+                return true;
 
-                case "setting":
-                    Setting setting = new Setting();
-                    setting.onCommand(sender, cmd, a, args);
-                    return true;
-
-                default:
-                    sender.sendMessage("§cそのようなサブコマンドは登録されていません。/as helpを用いて確認してください。");
-                    break;
-            }
+            default:
+                sender.sendMessage("§cそのようなサブコマンドは登録されていません。/as helpを用いて確認してください。");
+                break;
         }
         return false;
     }

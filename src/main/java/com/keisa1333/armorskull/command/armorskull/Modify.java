@@ -1,23 +1,13 @@
 package com.keisa1333.armorskull.command.armorskull;
 
-import com.google.common.collect.Multimap;
-import com.keisa1333.armorskull.Util;
 import de.tr7zw.changeme.nbtapi.*;
-import de.tr7zw.changeme.nbtapi.iface.ReadWriteNBT;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
-import java.io.File;
-import java.util.Map;
 import java.util.Random;
-import java.util.UUID;
 
 public class Modify implements CommandExecutor {
     @Override

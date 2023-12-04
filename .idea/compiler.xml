@@ -9,5 +9,8 @@
         <module name="ArmorSkull" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SkullArmor" target="9" />
+    </bytecodeTargetLevel>
   </component>
 </project>

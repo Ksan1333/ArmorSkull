@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://D:/ArmorSkull/ArmorSkull.iml" filepath="D:/ArmorSkull/ArmorSkull.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArmorSkull.iml" filepath="$PROJECT_DIR$/ArmorSkull.iml" />
     </modules>
   </component>
 </project>

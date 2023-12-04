@@ -1,6 +1,5 @@
 package com.keisa1333.armorskull.command.armorskull;
 
-import com.keisa1333.armorskull.Util;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

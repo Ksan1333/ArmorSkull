@@ -6,10 +6,10 @@
 
     <groupId>com.keisa1333</groupId>
     <artifactId>ArmorSkull</artifactId>
-    <version>0.3.1</version>
+    <version>0.4.0</version>
     <packaging>jar</packaging>
 
-    <name>ArmorSkull</name>
+    <name>SkullArmor</name>
 
     <properties>
         <java.version>1.8</java.version>

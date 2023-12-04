@@ -1,5 +1,5 @@
 name: ArmorSkull
-version: '0.3.1'
+version: '0.4.0'
 main: com.keisa1333.armorskull.ArmorSkull
 api-version: '1.20'
 author: keisa1333
@@ -7,10 +7,10 @@ author: keisa1333
 commands:
   armorskull:
     description: change skull to armor skull
-    aliases: [ as ]
+    aliases: [ arms ]
   armorskullreload:
     description: reload the plugin
-    aliases: [ asr]
+    aliases: [ armsr]
 
 permissions:
   armorskull.admin:

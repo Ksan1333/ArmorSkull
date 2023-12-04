@@ -5,12 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="add Hideflags, Modify clear.">
-      <change beforePath="D:/ArmorSkull/.idea/workspace.xml" beforeDir="false" afterPath="D:/ArmorSkull/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/command/armorskull/Rename.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Damage.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Damage.java" afterDir="false" />
-      <change beforePath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Mend.java" beforeDir="false" afterPath="D:/ArmorSkull/src/main/java/com/keisa1333/armorskull/event/Mend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArmorSkull.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArmorSkull.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/AnvilItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Create.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Durability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Durability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Enchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Enchant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Remove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Repair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Repair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Setting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Anvil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Enchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Enchant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Mend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Mend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +43,7 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
-    <option name="RECENT_GIT_ROOT_PATH" value="D:/ArmorSkull" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,10 +62,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ArmorSkull/target&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;プロジェクト&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/plugins/ArmorSkull&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;モジュール&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
 }</component>
@@ -60,6 +78,7 @@
       <recent name="D:\ArmorSkull\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\plugins\ArmorSkull\test\plugins" />
       <recent name="D:\ArmorSkull\test\plugins" />
       <recent name="D:\ArmorSkull\target" />
       <recent name="D:\ArmorSkull" />
@@ -67,9 +86,9 @@
   </component>
   <component name="RunManager" selected="Maven.ArmorSkull package">
     <configuration name="RunServer" type="JarApplication">
-      <option name="JAR_PATH" value="D:/ArmorSkull/test/paper-1.20.1-84.jar" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/test/paper-1.20.1-84.jar" />
       <option name="PROGRAM_PARAMETERS" value="nogui" />
-      <option name="WORKING_DIRECTORY" value="D:\ArmorSkull\test" />
+      <option name="WORKING_DIRECTORY" value="F:\plugins\ArmorSkull\test" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
@@ -96,7 +115,7 @@
               <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="D:/ArmorSkull" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
@@ -172,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692372933838</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add Hideflags, Modify clear.">
+      <option name="closed" value="true" />
+      <created>1692420338331</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692420338331</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
