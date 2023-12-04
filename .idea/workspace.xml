@@ -4,30 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="add Hideflags, Modify clear.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="645b466d-312b-4a11-bfc6-eda859005226" name="変更" comment="fix..">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArmorSkull.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArmorSkull.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/ArmorSkullCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/AnvilItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Create.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/DamageCause.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Durability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Durability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Enchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Enchant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Modify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Remove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Repair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Repair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Setting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Anvil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Enchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Enchant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Mend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/event/Mend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keisa1333/armorskull/command/armorskull/Help.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +40,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;F:/plugins/ArmorSkull&quot;,
     &quot;project.structure.last.edited&quot;: &quot;モジュール&quot;,
@@ -199,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692420338331</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix..">
+      <option name="closed" value="true" />
+      <created>1701685350370</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701685350370</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix..">
+      <option name="closed" value="true" />
+      <created>1701685366132</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701685366132</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -210,6 +206,7 @@
     <MESSAGE value="Update Rename (RGB colorcode, clear)" />
     <MESSAGE value="fix Bug, add SE breaking skull etc..." />
     <MESSAGE value="add Hideflags, Modify clear." />
-    <option name="LAST_COMMIT_MESSAGE" value="add Hideflags, Modify clear." />
+    <MESSAGE value="fix.." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix.." />
   </component>
 </project>

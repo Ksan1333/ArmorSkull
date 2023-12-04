@@ -44,8 +44,6 @@ public class Help implements CommandExecutor {
 
         Component top = mm.deserialize("<yellow>ArmorSkull Help 1/2<gray><hover:show_text:\"<blue>このように説明が表示されます。\">(Hover Text)");
 
-        Component content1 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭に金床で修復可能なアイテムを追加します。\nidを入力した後、修復アイテムを持って再度実行することで登録されます。\n/as settingから金床修復可に設定するのを忘れないように！\"><click:suggest_command:/armorskull anvilItem >/as anvilItem <id>");
-
         Component content2 = mm.deserialize("<gray><hover:show_text:\"<blue>手に持ってる頭をArmor仕様にします。\n<durability>は設定する耐久値です。\nその後、/as settingから詳細な設定ができます。\"><click:suggest_command:/armorskull create >/as create <durability>");
 
         Component content3 = mm.deserialize("<gray><hover:show_text:\"<blue>防具耐久値が減るダメージソースを編集できます。\nデフォルトでは通常の防具と同じ設定です。\nダメージソースは複数追加できます。\n設定項目は、クリックで出てくるリンクを参照してください。\"><click:open_url:https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html>/as damage (clear|default|add <damege cause>)");
@@ -61,7 +59,6 @@ public class Help implements CommandExecutor {
         Component next = mm.deserialize("<yellow><click:run_command:/armorskull help 2>[NEXT]");
 
         player.sendMessage(top);
-        player.sendMessage(content1);
         player.sendMessage(content2);
         player.sendMessage(content3);
         player.sendMessage(content4);
